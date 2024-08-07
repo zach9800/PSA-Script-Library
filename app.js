@@ -67,6 +67,26 @@ function addComment(scriptId, commentText) {
     });
 }
 
+// Save a new script
+document.getElementById('saveScript').addEventListener('click', () => {
+    const scene1 = document.getElementById('scene1').value;
+    const description1 = document.getElementById('description1').value;
+    const scene2 = document.getElementById('scene2').value;
+    const description2 = document.getElementById('description2').value;
+
+    const newScript = {
+        title: `New Script - ${new Date().toLocaleDateString()}`,
+        content: `Scene 1: ${scene1} - ${description1}\nScene 2: ${scene2} - ${description2}`
+    };
+
+    db.collection('scripts').add(newScript).then(() => {
+        console.log('New script added!');
+        loadScripts();  // Reload scripts to display the new script
+    }).catch((error) => {
+        console.error('Error adding script: ', error);
+    });
+});
+
 // Load scripts on page load
 document.addEventListener('DOMContentLoaded', () => {
     loadScripts();
