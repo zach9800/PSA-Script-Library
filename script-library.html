@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Library - PSA Script Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Script Library</h1>
+        <button id="newScript">New Script</button>
+    </header>
+    
+    <main>
+        <div id="newScriptForm" style="display: none;">
+            <h2>Create a New Script</h2>
+            <table>
+                <tr>
+                    <th>Scene</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="scene1" placeholder="Scene 1"></td>
+                    <td><input type="text" id="description1" placeholder="Scene 1 Description"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="scene2" placeholder="Scene 2"></td>
+                    <td><input type="text" id="description2" placeholder="Scene 2 Description"></td>
+                </tr>
+                <!-- Add more scenes as needed -->
+            </table>
+            <button id="saveScript">Save Script</button>
+        </div>
+        <div id="scripts"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PSA Script Showcase</p>
+    </footer>
+
+    <script>
+        document.getElementById('newScript').addEventListener('click', () => {
+            document.getElementById('newScriptForm').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
