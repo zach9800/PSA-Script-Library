@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSA Script Showcase</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
-    <script defer src="app.js"></script>
 </head>
 <body>
     <header>
@@ -21,15 +17,16 @@
             <h2>Real-Time Script Collaboration</h2>
             <p>Collaborate on scripts in real-time with others. Edit, comment, and share your ideas seamlessly.</p>
         </section>
-        
-        <section id="script-library">
-            <h2>Script Library</h2>
-            <div id="scripts"></div>
-        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 PSA Script Showcase</p>
     </footer>
+
+    <script>
+        document.getElementById('startCollaborating').addEventListener('click', () => {
+            window.location.href = 'script-library.html';
+        });
+    </script>
 </body>
 </html>
